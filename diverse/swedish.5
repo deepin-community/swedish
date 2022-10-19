@@ -1,0 +1,30 @@
+.TH WORDS 5 "4 June 1994" "Linux" "Linux Programmers Manual"
+.SH NAME
+swedish \- a list of swedish words
+.SH DESCRIPTION
+.B /usr/dict/swedish
+is an ASCII file which contains an alphabetic list of words, one per
+line.
+.SH AUTHOR
+Word lists are collected and maintained by various authors.
+.SH FILES
+.I /etc/dictionary
+This is a link to a /usr/dict/<language> file.
+
+.I /usr/dict/words
+This is linked to /etc/dictionary, it exists for
+software compatibility.  
+
+.PP
+The directory
+.I /usr/dict
+can contain word lists for many languages, with name of the language
+in English, e.g.,
+.I /usr/dict/french and /usr/dict/danish
+contain respectively lists of French and Danish words if they exist.
+Such lists should be coded using the ISO 8859 character set encoding.
+.SH "SEE ALSO"
+.IR ispell "(1)."
+.SH History
+The words lists are not specific, and may be generated from any number
+of sources.

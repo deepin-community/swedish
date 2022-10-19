@@ -1,0 +1,167 @@
+swedish (1.4.5-2.3) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Fri, 01 Jan 2021 17:15:02 +0100
+
+swedish (1.4.5-2.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add build-arch and build-indep targets. Closes: #648934, #822027.
+  * Bump debhelper and standards versions.
+  * Use C locale for sorting, to make the build reproducible (Alexis Bienvenüe).
+    Closes: #827863.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 28 Jul 2016 14:05:25 +0200
+
+swedish (1.4.5-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Depend on new ispell. This rebuild fixes an RC bug.
+    Thanks to Svante Signell (Closes: #623070)
+
+ -- Tobias Quathamer <toddy@debian.org>  Mon, 27 Feb 2012 23:43:25 +0100
+
+swedish (1.4.5-2) unstable; urgency=low
+
+  * New Maintainer (closes: #156532).
+  * Remove README.Debian as it does not contain useful information anymore
+
+ -- Jeremiah C. Foster <jeremiah@jeremiahfoster.com>  Mon, 25 Aug 2008 15:43:14 +0200
+
+swedish (1.4.5-1) unstable; urgency=low
+
+  * QA upload
+  * Do no longer build as Debian native package. The new upstream
+    version fixes a spelling error. Thanks to Martin Stigge for
+    the patch. Closes: #186072
+  * Use debhelper >= 5, add compat file
+  * Convert copyright file to UTF-8 and add more information
+  * Convert README.Debian to UTF-8
+  * debian/control:
+    - Change synopsis to better fit other dictionary packages
+    - Update to Standards-Version 3.8.0
+  * Clean up debian/rules, don't ignore errors from make distclean
+  * Add an empty watch file saying that there's no upstream
+
+ -- Tobias Quathamer <toddy@debian.org>  Thu, 31 Jul 2008 23:04:27 +0200
+
+swedish (1.4.4) unstable; urgency=low
+
+  * QA Group upload orphaning this package
+  * debian/control: changed debconf dependency to ${misc:Depends} (closes:
+    #332108)
+  * debian/changelog: remove obsolete editor stuff from the bottom
+  * debian/copyright: updated address of the FSF
+  * debian/changelog: converted to utf-8 encoding
+  * debian/rules: bumped debhelper compatibility level to 4
+
+ -- Andrew Pollock <apollock@debian.org>  Sun,  9 Apr 2006 13:47:30 -0700
+
+swedish (1.4.3) unstable; urgency=low
+
+  * Don't use - as a word constituent (related to bug #136620).
+  * Chnage CD -> cd (according to datatermgruppen at KTH).
+  * Acknowledge NMUs (closes: #164256, #164270).  Thanks to agmartin.
+  * Update to new .config system (closes: #232165, #232178).
+  
+ -- Mikael Hedin <micce@debian.org>  Mon, 15 Mar 2004 21:45:46 +0100
+
+swedish (1.4.2-0.2) unstable; urgency=low
+
+  * Non-Maintainer Upload
+  * New policy compliant package (closes: #164256, #164270)
+  * Last minute changes fro mthe policy:
+    - Lowered dictionaries-common dependency from 'Pre-depends' to 'Depends'.
+    - Removed warnings about the experimental character of this package.
+
+ -- Agustin Martin Domingo <agmartin@debian.org>  Mon, 21 Oct 2002 14:09:57 +0200
+
+swedish (1.4.2-0.1) unstable; urgency=low
+
+  * Experimental package after the dictionaries policy proposal. Please
+    see the policy document for details on the changes. 
+    Micce, I changed the conflicts in dictionaries-common control file to
+    (<=1.4.2). That way you can decide the new version number, be if 2.0.0
+    as we spoke, or whatever else. I have put this pakage a NMU number 
+    with debian revision even if the package is native to make that easier.
+  * Removed old templates files for wswedish. All that work is currently 
+    done by dictionaries-common itself. We may need some of the localized 
+    templates, but since they will not be exactly the same, I prefer to
+    restart from scratch.
+  * Added a Pspell-Ispell entry to the iswedish.info-ispell file.
+
+ -- Agustín Martín Domingo <agmartin@debian.org>  Mon, 10 Jun 2002 17:33:35 +0200
+
+swedish (1.4.2) unstable; urgency=low
+
+  * Spanish translation of the debconf template, thanks to Carlos Valdivia
+    <valyag@hotpop.com> (closes: #117683).
+  * Modularized templates.
+  * Russian translation of template, thanks to Ilgiz Kalmetev
+    <ilgiz@bashtelecom.ru> (closes: #137702).
+  * Fixed typo in description (closes: #125509)
+  * Partial sync with sol 1.3.7 (the wordlist from speling.org).
+
+ -- Mikael Hedin <micce@debian.org>  Mon, 18 Mar 2002 17:44:59 +0100
+
+swedish (1.4.1) unstable; urgency=low
+
+  * Install /usr/share/dict/swedish mode 644.
+  * Fixed typo in wswedish.template.
+
+ -- Mikael Hedin <micce@debian.org>  Tue, 29 May 2001 09:06:09 +0200
+
+swedish (1.4) unstable; urgency=low
+
+  * Added german template (thanks Sebastian Feltel <sebastian@feltel.de>)
+    (closes: #98394)
+  * Reverted to use Göran Andersons list and make it a native Debian
+    packet with source swedish.  It's a much more fancy way of keeping the
+    wordlist, and also better!
+  
+  * Added some words from the ispell-sv list that I think are
+    appropriate. 
+
+ -- Mikael Hedin <micce@debian.org>  Mon, 28 May 2001 23:02:06 +0200
+
+ispell-sv (1.3.2-2) unstable; urgency=low
+
+  * Moved to /usr/share/* in last version (closes: #90420, #91702, #91509,
+    #91091)
+  * This uses the ispell-sv wordlist, a bit different from Gorans, but I
+    will merge updates to ispell-sv eventually...
+  * Using update-alternatives and debconf to set default dictionary
+    (closes: #27956)
+  * Corrected 'sekventiell' (closes: #46924)
+  * Architecture: any in iswedish (closes: #76375, #76548)
+  * Added swedish templates for debconf.
+  * Most of the bugs were fixed in last version, but I didn't dare to
+    close them because of the source change.  No complaints so far, so
+    here we go.
+
+ -- Mikael Hedin <micce@debian.org>  Mon, 21 May 2001 21:13:32 +0200
+
+ispell-sv (1.3.2-1) unstable; urgency=low
+
+  * New upstream.
+  * New maintainer.
+  * Possibly screwed up Gorans changes, and other things.  Will continue
+    to investigate.  Please help with bug reports!
+  * wswedish: Uses debconf.
+
+ -- Mikael Hedin <micce@debian.org>  Mon,  7 May 2001 22:22:24 +0200
+
+swedish (1.3-2) frozen unstable; urgency=low
+
+  * New scripts by Charles Briscoe-Smith.
+  * Sort the wordlist using Swedish sort order.
+
+ -- Goran Andersson <goran_a@maths.lth.se>  Mon,  6 Apr 1998 13:08:14 +0200
+
+swedish (1.3-1) unstable; urgency=low
+
+  * New upstream source.
+
+ -- Goran Andersson <goran_a@maths.lth.se>  Thu, 12 Mar 1998 17:27:39 +0100

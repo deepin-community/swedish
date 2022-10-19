@@ -1,0 +1,24 @@
+Source: swedish
+Section: text
+Priority: optional
+Maintainer: Jeremiah C. Foster <jeremiah@jeremiahfoster.com>
+Build-Depends: debhelper (>= 9), ispell (>= 3.3.02), perl, dictionaries-common-dev (>= 0.20)
+Standards-Version: 3.9.8
+
+Package: iswedish
+Architecture: any
+Depends: ispell (>= 3.3.02), ${misc:Depends}, dictionaries-common (>= 0.20)
+Suggests: wswedish
+Provides: ispell-dictionary
+Description: Swedish dictionary for ispell
+ This is the Swedish dictionary, to be used with ispell
+ to check and correct spelling in Swedish texts.
+ The dictionary contains approximately 120,000 words.
+
+Package: wswedish
+Architecture: all
+Depends: ${misc:Depends}, dictionaries-common (>= 0.20)
+Provides: wordlist
+Description: Swedish dictionary words for /usr/share/dict
+ This is a list of 120,000 Swedish words and names, to be used
+ for whatever purpose you may think of.

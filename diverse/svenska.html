@@ -1,0 +1,234 @@
+<html>
+<head>
+  <title>Svensk ispell-ordlista</title>
+</head>
+<body>
+
+  [ <a href="swedish.html">In English</a>. ]
+  
+  <h1>Svensk ispell-ordlista</h1>
+
+    H&auml;r finns en svensk ordlista som
+    motsvarar cirka 120000 ordformer. 
+    Ordlistan kan anv&auml;ndas
+    tillsammans med programmet <tt>ispell</tt> p&aring;
+    UNIX-system f&ouml;r att kontrollera
+    och r&auml;tta stavningen i filer med svensk text.
+
+  <h3>Copyright</h3>
+
+    Copyright © 1998 Sk&aring;ne/Sjælland Linux User Group <ispell@sslug.imm.dtu.dk>.
+    <pre>
+    This dictionary is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This dictionary is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    </pre>
+    <a href="COPYING">The GNU General Public License</a>
+
+  <h3>Installation</h3>
+
+    Installera f&ouml;rst ispell 3.1.
+    Programkoden f&ouml;r <tt>ispell</tt>, <tt>buildhash</tt> mm kan erh&aring;llas fr&aring;n
+    ispells hemsida,<br>
+    <a href="http://fmg-www.cs.ucla.edu/geoff/ispell.html">http://fmg-www.cs.ucla.edu/geoff/ispell.html</a>.
+    <br>
+    OBS! Programmet m&aring;ste komplieras utan direktivet <tt>NO8BIT</tt>.
+    Kommentera d&auml;rf&ouml;r bort raden <tt>#define NO8BIT</tt> fr&aring;n
+    filen <tt>local.h</tt>. D&auml;refter kan programmet kompileras
+    med kommandot <tt>make</tt>.
+
+    <p>
+
+    H&auml;mta hem filen <a href="iswedish-1.3.tar.gz">iswedish-1.3.tar.gz</a>.
+
+    <p>
+    
+    Packa upp filen t.ex. med kommandona
+    <pre>
+    gunzip iswedish-1.3.tar.gz
+    tar -xvf iswedish-1.3.tar
+    cd iswedish-1.3
+    </pre>
+    Bygg en hashkodad ordlista med kommandot
+    <pre>
+    buildhash svenska.datalista svenska.aff svenska.hash
+    </pre>
+    Kopiera filerna <tt>svenska.aff</tt> och <tt>svenska.hash</tt>
+    till <tt>ispell</tt>-katalogen, troligtvis <tt>/usr/lib/ispell</tt>
+    eller <tt>/usr/local/lib/ispell</tt>.
+    (Anv&auml;nd kommandot <tt>ispell -vv | grep LIBDIR</tt> f&ouml;r att ta reda p&aring;
+    vilken katalog det ska vara.)
+    Om detta &auml;r om&ouml;jligt,
+    kopiera dem t.ex. till din hemkatalog och ange hela s&ouml;kv&auml;gen till
+    <tt>svenska.hash</tt> varje g&aring;ng <tt>ispell</tt> anropas.
+    <pre>
+    cp svenska.aff svenska.hash /usr/lib/ispell
+    </pre>
+    &Ouml;vriga filer kan raderas:
+    <pre>
+    cd ..
+    rm -r iswedish-1.3
+    rm iswedish-1.3.tar
+    </pre>
+    Om den svenska ordlistan &auml;r den som vanligtvis anv&auml;nds
+    (ja, det finns ordlistor f&ouml;r &aring;tskilliga andra spr&aring;k, se ispells hemsida),
+    s&aring; kan det vara l&auml;mpligt att g&ouml;ra den till <tt>default</tt>:
+    <pre>
+    cd /usr/lib/ispell
+    ln -s svenska.hash default.hash
+    ln -s svenska.aff default.aff
+    </pre>
+
+  
+
+  <h3>Anv&auml;ndning</h3>
+  
+    Om t ex LaeSMIG &auml;r en fil med svensk text, ge kommandot
+    <pre>
+    ispell -d svenska LaeSMIG
+    </pre>
+    eller, om svenska &auml;r default, 
+    <pre>
+    ispell LaeSMIG 
+    </pre>
+    f&ouml;r att kontrollera stavningen i filen.
+    <p>
+    N&auml;r programmet kommer till ett ord som inte finns bland
+    ordformerna i ordlistan, s&aring; stannar det upp
+    och markerar detta ord. Eventuellt ges en lista med f&ouml;rslag
+    p&aring; hur stavningen ska &auml;ndras, numrerade 0,1,2 osv.
+    Om man accepterar n&aring;got av dessa &auml;ndringsf&ouml;rslag,
+    s&aring; kan man trycka p&aring; motsvarande tangent.
+    Man kan ocks&aring; trycka p&aring; tangenten <tt>R</tt> f&ouml;r att &auml;ndra
+    manuellt.
+    Om man inte vill &auml;ndra ordet i sin fil, s&aring; finns
+    ett antal alternativ. Om man
+    trycker p&aring; mellanslagstangenten, s&aring; forts&auml;tter
+    <tt>ispell</tt> utan att &auml;ndra n&aring;got.
+    Om man trycker p&aring; tangenten <tt>A</tt>, s&aring; tvingar
+    man <tt>ispell</tt> att acceptera varje f&ouml;rekomst av
+    detta ord i filen utan att stanna upp.
+    <p>
+    Om <tt>ispell</tt> knotar fast ordet &auml;r r&auml;ttstavat
+    (detta intr&auml;ffar tyv&auml;rr alltf&ouml;r ofta), s&aring; kan man l&auml;mpligen
+    l&auml;gga in det i sin privata till&auml;ggsordlista och d&auml;rigenom ut&ouml;ka
+    antalet ord <tt>ispell</tt> k&auml;nner igen. Detta g&aring;r till s&aring; att
+    man trycker <tt>I</tt> (insert, dvs l&auml;gg in) eller <tt>U</tt>
+    (uncapitalize and insert, dvs omvandla till sm&aring; bokst&auml;ver och
+    l&auml;gg sedan in). D&aring; l&auml;ggs ordet in i
+    en fil med namnet <tt>.ispell_svenska</tt> eller
+    <tt>.ispell_default</tt> i ens hemkatalog.
+    Det &auml;r viktigt att man ser till att de ord man l&auml;gger in
+    i <tt>.ispell_default</tt> bara har stora bokst&auml;ver
+    om de alltid m&aring;ste skrivas s&aring; (t.ex. egennamn, som G&ouml;ran,
+    eller vissa f&ouml;rkortningar, som TCO). Vanliga ord ska l&auml;ggas in
+    med sm&aring; bokst&auml;ver. 
+    Om ett ord inleds med stor bokstav fast det inte &auml;r ett
+    ett egennamn, t.ex. eftersom det kommer f&ouml;rst i en mening,
+    ska man allts&aring; v&auml;lja <tt>U</tt> snarare &auml;n <tt>I</tt>.
+        
+  <h3>Emacs</h3>
+    Med f&ouml;rdel kan man dock anropa <tt>ispell</tt> fr&aring;n
+    GNU Emacs eller XEmacs.
+    F&ouml;r att kontrollera stavningen i sin fil ger man kommandot
+    <tt>M-x ispell-buffer</tt>.
+    F&ouml;r att v&auml;lja den svenska ordlistan anv&auml;nds kommandot
+    <tt>M-x ispell-change-dictionary</tt> med valet
+    <tt>svenska</tt>  (detta beh&ouml;vs inte om
+    svenska &auml;r default).
+    Dessa kommandon b&ouml;r ocks&aring; vara tillg&auml;ngliga
+    fr&aring;n menyn <tt>Edit</tt>,
+    undermenyn <tt>Spell</tt> - v&auml;lj f&ouml;rst
+    <tt>Select Svenska</tt> och d&auml;refter
+    <tt>Check Buffer</tt>.
+    Om <tt>Spell</tt> inte syns p&aring; menyn <tt>Edit</tt>,
+    s&aring; l&auml;gg in f&ouml;ljande kommandon i en fil med
+    namnet <tt>.emacs</tt> i din hemkatalog.
+    <pre>
+      (autoload 'ispell-word "ispell"
+        "Check the spelling of word in buffer." t)
+      (global-set-key "\e$" 'ispell-word)
+      (autoload 'ispell-region "ispell"
+        "Check the spelling of region." t)
+      (autoload 'ispell-buffer "ispell"
+        "Check the spelling of buffer." t)
+      (autoload 'ispell-complete-word "ispell"
+        "Look up current word in dictionary and try to complete it." t)
+      (autoload 'ispell-change-dictionary "ispell"
+        "Change ispell dictionary." t)
+      (autoload 'ispell-message "ispell"
+        "Check spelling of mail message or news post.")
+   </pre>
+
+Tyv&auml;rr anger <tt>emacs</tt> automatiskt flaggan <tt>-C</tt>
+ om man v&auml;ljer "svenska" som ordlista,
+och flaggan <tt>-B</tt> om man v&auml;ljer default. Ett (inte s&auml;rskilt vackert) s&auml;tt att
+r&aring;da bot p&aring; detta &auml;r att l&auml;gga in raderna
+
+   <pre>
+      (setq ispell-dictionary "svenska")
+      (setq ispell-dictionary-alist
+        '(("svenska"
+           "[A-Za-z\345\344\366\305\304\366]"  "[^A-Za-z\345\344\366\305\304\366]"
+           "[']" nil ("-d" "svenska") "~list"
+           iso-latin-1)
+          ("svenska8"
+           "[A-Za-z\345\344\366\305\304\366]"  "[^A-Za-z\345\344\366\305\304\366]"
+           "[']" nil ("-B" "-d" "svenska") "~list"
+           iso-latin-1)
+          ))
+   </pre>
+
+i sin <tt>.emacs</tt>. D&aring; anropas ispell med flaggan <tt>-B</tt>
+ifall man v&auml;ljer "svenska8" som
+ordlista, men utan s&aring;v&auml;l <tt>-B</tt> som <tt>-C</tt>
+om man v&auml;ljer "svenska" som ordlista (detta &auml;r standardfallet).
+
+  <h3>&Auml;ndringar</h3>
+   
+    <ul>
+      <li>12 mars 1998: version 1.3.
+          Sm&auml;rre tekniska &auml;ndringar.
+      <li>29 januari 1998: version 1.2.1.
+          Ordlistan sk&ouml;ts numera av
+          Sk&aring;ne/Sjælland Linux User Group <ispell@sslug.imm.dtu.dk>.
+          Ett f&aring;tal ord har lagts till. Ordlistan inneh&aring;ller nu 24208
+          stamord, motsvarande 118270 ordformer.
+      <li>26 september 1997: version 1.2.
+          Numera accepteras sammans&auml;ttningar av tv&aring; ord fr&aring;n ordlistan i 
+          vissa fall som r&auml;ttstavade. Den som vill undvika detta 
+          ska anropa ispell med flaggan <tt>-B</tt>.
+          Affixfilen har omstrukturerats f&ouml;r att bli klarare. St&ouml;det f&ouml;r
+          prefix har tagits bort till f&ouml;rm&aring;n f&ouml;r b&ouml;jningsregler f&ouml;r
+          sammans&auml;ttningar.
+          Vissa vardagliga och &aring;lderdomliga ord har tagits bort fr&aring;n
+          ordlistan. De &aring;terkommer som tillvalsm&ouml;jligheter i n&auml;sta version.
+          Ordlistan inneh&aring;ller nu 24082 stamord, motsvarande 117617 ordformer.
+      <li>23 februari 1997: version 1.1. Sm&aring; r&auml;ttelser och till&auml;gg
+          i affixfilen. M&aring;nga felstavade ord har tagits bort,
+	  m&aring;nga b&ouml;jningsformer av befintliga ord har lagts till.
+	  Ordlistan inneh&aring;ller nu 24722 stamord, motsvarande 84740 ordformer.
+      <li>7 februari 1997: version 1.01. Bytte namn fr&aring;n L&Auml;SMIG
+          till LaeSMIG eftersom vissa versioner av <tt>tar</tt>
+	  inte accepterar &aring;ttabitars tecken.
+      <li>15 januari 1997: version 1.0. F&ouml;rsta utg&aring;van. Affixtabellen
+          &auml;r nyskriven fr&aring;n grunden (dock inspirerad av en dansk affixtabell).
+	  Ordlistan bygger dels p&aring; public domain-material fr&aring;n
+          <a href="ftp://ftp.lysator.liu.se/pub/runeberg">ftp://ftp.lysator.liu.se/pub/runeberg</a>, 
+          dels p&aring; privata till&auml;ggsordlistor som anv&auml;ndare st&auml;llt till f&ouml;rfogande.
+	  Jag har ocks&aring;, med hj&auml;lp av affixtabellen, genererat ett stort antal
+	  b&ouml;jningsformer av de tillg&auml;ngliga orden.
+	  Ordlistan inneh&aring;ller 27737 stamord, motsvarande 76364 ordformer.
+    </ul>
+<hr>
+  Sk&aring;ne/Sjælland Linux User Group,
+  &lt;<A HREF = "mailto:ispell@sslug.imm.dtu.dk">ispell@sslug.imm.dtu.dk</a>&gt
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+flag Z:
+	.	>	ZQXZ
+flag Y:
+	.	>	ZQXY
+flag X:
+	.	>	ZQXX
+flag W:
+	.	>	ZQXW
+flag V:
+	.	>	ZQXV
+flag U:
+	.	>	ZQXU
+flag T:
+	.	>	ZQXT

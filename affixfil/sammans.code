@@ -1,0 +1,62 @@
+flag ~Z:
+# Som myra: myr- (stack)
+	A	>	-A,-
+# Som förare: förar- (platsen)
+	E	>	-E,-
+# Som avgud: avguda- (dyrkan)
+	[^AE]	>	A
+
+flag ~Y:
+# Som ränta: ränte- (höjning)
+	A	>	-A,E
+# Som tjänst: tjänste- (man)
+	[^A]	>	E
+
+flag ~X:
+# Som vecka: vecko- (dag)
+	A	>	-A,O
+# Som psyke: psyko- (analys)
+	E	>	-E,O
+# Som land: lant- (brukare)
+	D	>	-D,T
+
+flag ~W:
+# Som vara: varu- (hus)
+	A	>	-A,U
+# Som maximum: maximi- (gräns)
+	U M	>	-UM,I
+
+flag ~V:
+# Som pepparkaka: pepparkaks- (hus)
+	A	>	-A,S
+# Som ansikte: ansikts- (uttryck)
+	E	>	-E,S
+# Som förhand: förhands- (granskning)
+	[^AE]	>	S
+
+flag ~U:
+# Som hyra: hyres- (gäst)
+	A	>	-A,ES
+# Som säd: sädes- (fält)
+	[^AE]	>	ES
+# Som yrke: yrkes- (man)
+	E	>	S
+
+flag ~T:
+# Som tavla: tavel- (försäljare)
+	L A	>	-LA,EL
+# Som stämma: stäm- (gaffel)
+	M M A	>	-MA,-
+# Som timme: tim- (lön)
+	M M E	>	-ME,-
+# Som siffra: siffer- (kombination)
+	R A	>	-RA,ER
+# Som förälder: föräldra- (möte)
+	E R	>	-ER,RA
+# Som äpple: äppel- (must)
+	L E	>	-LE,EL
+# Som gymnasium: gymnasie- (elev)
+	U M	>	-UM,E
+# Som ängel: ängla- (vakt)
+	E L	>	-EL,LA
+

@@ -1,0 +1,13 @@
+# Vi tillåter sammansättningar
+#compoundwords on
+compoundwords controlled S
+compoundmin 3
+
+
+# Följande rad anger vilka tecken som ska uppfattas som bokstäver:
+wordchars [a-zåäöéàüèæøç] [A-ZÅÄÖÉÀÜÈÆØÇ]
+# skall '-' vara med?  Är hans-och-hennes ett ord eller tre?  Får man skriva ihop 
+# ord på det sättet?  /MH
+
+# Nej, bindestreck är inge bra som ordbildare.
+#wordchars [\-]

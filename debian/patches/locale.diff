@@ -1,0 +1,24 @@
+only in patch2:
+unchanged:
+--- swedish-1.4.5.orig/Makefile
++++ swedish-1.4.5/Makefile
+@@ -47,8 +47,8 @@
+ 
+ svenska.datalista: svenska.aff goranj.data gorann.data
+ 	< goranj.data sed 's/\/.*//' | sed 's/$$/\/S/' > goranJ.data
+-	cat goran[jJ].data | sort -f | icombine svenska.aff > gorana.data
+-	cat gorana.data gorann.data | sort -f > svenska.datalista
++	cat goran[jJ].data | LC_ALL=C sort -f | icombine svenska.aff > gorana.data
++	cat gorana.data gorann.data | LC_ALL=C sort -f > svenska.datalista
+ 	rm goran[aJ].data
+ 
+ goranj.data: diverse/gtmp.aff $(jsynclistor)
+@@ -113,7 +113,7 @@
+ 	munchlist -l diverse/gtmp.aff -v $< > $*.data ; touch $*.sync
+ 
+ %.d2o: %.data diverse/gtmp.hash
+-	ispell -d diverse/gtmp -e < $< | sed s/\ /$$'\\\n'/g | sort -u > $*.ord ; touch $*.sync
++	ispell -d diverse/gtmp -e < $< | sed s/\ /$$'\\\n'/g | LC_ALL=C sort -u > $*.ord ; touch $*.sync
+ 
+ %.o: %.ord
+ 	-[ -f $*.data ] && [ ! -f $*.sync ] && ( echo "Filen $*.sync finns ej" ; exit 1 )

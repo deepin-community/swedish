@@ -1,0 +1,12 @@
+Language: svenska (Swedish)
+Hash-Name: swedish
+Emacsen-Name: svenska
+Casechars: [A-Za-z\345\344\366\351\340\374\350\346\370\347\305\304\326\311\300\334\310\306\330\307]
+Not-Casechars: [^A-Za-z\345\344\366\351\340\374\350\346\370\347\305\304\326\311\300\334\310\306\330\307]
+Otherchars: [']
+Many-Otherchars: 
+Additionalchars: åäöéàüèæøçÅÄÖÉÀÜÈÆØÇ
+Ispell-Args: -C
+Extended-Character-Mode: ~list
+Coding-System: iso-8859-1
+Pspell-ispell: sv iso8859-1
